@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espécies Autóctones e Exóticas de Penafiel</title>
+    <meta name="description" content="Site informativo sobre biodiversidade de Penafiel, destacando espécies autóctones e exóticas.">
+    <meta name="keywords" content="espécies autóctones Penafiel, espécies exóticas invasoras, biodiversidade Porto, preservação ambiental">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f8f9fa; }
+        .hero { background: linear-gradient(to right, #28a745, #007bff); color: white; padding: 50px 0; }
+        .species-card { margin-bottom: 20px; }
+        .map-container { height: 400px; }
+        footer { background-color: #343a40; color: white; padding: 20px 0; text-align: center; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Biodiversidade Penafiel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home">Página Inicial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#autoctones">Espécies Autóctones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#exoticas">Espécies Exóticas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#fontes">Fontes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Espécies Autóctones e Exóticas de Penafiel</h1>
+            <p>Explore a biodiversidade do concelho de Penafiel, distrito do Porto. Aprenda sobre espécies nativas e os impactos das invasoras para preservar nossos ecossistemas.</p>
+            <div class="map-container" id="map"></div>
+            <p>Mapa interativo: Clique para ver áreas de ocorrência.</p>
+        </div>
+    </section>
+
+    <section id="autoctones" class="container my-5">
+        <h2>Espécies Autóctones</h2>
+        <p>Espécies nativas de Penafiel, divididas por habitat.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="species-card card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Quercus_robur.jpg/300px-Quercus_robur.jpg" class="card-img-top" alt="Carvalho-alvarinho">
+                    <div class="card-body">
+                        <h5>Carvalho-alvarinho</h5>
+                        <p><strong>Nome Científico:</strong> Quercus robur</p>
+                        <p><strong>Características:</strong> Árvore de até 30m, folhas lobadas, frutos (bolotas) marrons.</p>
+                        <p><strong>Distribuição:</strong> Áreas florestais como Serra de Penafiel.</p>
+                        <p><strong>Importância Ecológica:</strong> Fornece habitat para fauna e ajuda na retenção de solo.</p>
+                        <p><strong>Fontes:</strong> ICNF (2023), Flora-On.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Adicione mais cards aqui -->
+        </div>
+    </section>
+
+    <section id="exoticas" class="container my-5">
+        <h2>Espécies Exóticas e Invasoras</h2>
+        <p>Espécies não-nativas, com foco em impactos.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="species-card card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Ailanthus_altissima.jpg/300px-Ailanthus_altissima.jpg" class="card-img-top" alt="Árvore-do-céu">
+                    <div class="card-body">
+                        <h5>Árvore-do-céu</h5>
+                        <p><strong>Nome Científico:</strong> Ailanthus altissima</p>
+                        <p><strong>Características:</strong> Árvore rápida, folhas compostas, flores amarelas.</p>
+                        <p><strong>Impactos:</strong> Compete por recursos, altera solos e reduz biodiversidade.</p>
+                        <p><strong>Áreas Afetadas:</strong> Margens de rios em Penafiel.</p>
+                        <p><strong>Ações:</strong> Remoção manual e plantio de nativas.</p>
+                        <p><strong>Fontes:</strong> ICNF (2022), Estudos da Universidade do Porto.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Adicione mais cards aqui -->
+        </div>
+    </section>
+
+    <section id="fontes" class="container my-5">
+        <h2>Fontes de Pesquisa</h2>
+        <ul>
+            <li>Instituto da Conservação da Natureza e das Florestas (ICNF): <a href="https://www.icnf.pt">icnf.pt</a></li>
+            <li>Flora-On: Plataforma de dados sobre flora portuguesa.</li>
+            <li>Associações Locais: Liga para a Proteção da Natureza (LPN).</li>
+            <li>Publicações: "Biodiversidade no Norte de Portugal" (Universidade do Porto, 2021).</li>
+        </ul>
+    </section>
+
+    <section id="contato" class="container my-5">
+        <h2>Contato</h2>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Mensagem</label>
+                <textarea class="form-control" id="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+        <p>Redes Sociais: <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Biodiversidade Penafiel. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([41.209, -8.283], 10); // Coordenadas aproximadas de Penafiel
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+        L.marker([41.209, -8.283]).addTo(map).bindPopup('Penafiel - Área de biodiversidade');
+    </script>
+</body>
+</html>
